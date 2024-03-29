@@ -74,7 +74,8 @@ class cmake_build(build):
         python_version = "{v[0]}.{v[1]}".format(v=platform.python_version_tuple())
         self._build(
             "build_{}".format(python_version),
-            " -DPythonLibsNew_FIND_VERSION={}".format(python_version),
+            " -DPythonLibsNew_FIND_VERSION={}".format(python_version) + 
+            " -DPYMESH_USE_DRACO=OFF ",
             False,
         )
 
